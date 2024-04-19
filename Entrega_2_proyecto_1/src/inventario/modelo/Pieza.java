@@ -3,6 +3,8 @@ package inventario.modelo;
 import java.util.ArrayList;
 import java.util.List;
 
+import usuarios.modelo.Usuario;
+
 public abstract class Pieza 
 {
 	private String id;
@@ -17,9 +19,11 @@ public abstract class Pieza
 	private double precio;
 	private double precioMinimo;
 	private String fechaDePrestamo;
+	private Usuario propietario;
 	private List<String> ids = new ArrayList<String>();
 	
-	public Pieza(List<String> autores,String fecha,String origen,String descripcion,double precio,String fechaP,String titulo,double minPrecio) 
+	public Pieza(List<String> autores,String fecha,String origen,String descripcion,double precio,String fechaP,String titulo,
+			double minPrecio,Usuario propietario) 
 	{
 		id = generarId();
 		this.autores = autores;
@@ -32,6 +36,7 @@ public abstract class Pieza
 		subastable = false;
 		disponible = false;
 		precioMinimo = minPrecio;
+		this.propietario = propietario;
 	}
 	
 	public String generarId ()
@@ -107,6 +112,12 @@ public abstract class Pieza
 		return tipo;
 	}
 	
+	public Usuario getPropietario() 
+	
+	{
+		return propietario;
+	}
+
 	public void cambiarDisponibilidad()
 	{
 		if (disponible)

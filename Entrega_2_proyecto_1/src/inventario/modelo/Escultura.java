@@ -2,6 +2,8 @@ package inventario.modelo;
 
 import java.util.List;
 
+import usuarios.modelo.Usuario;
+
 public class Escultura extends Pieza
 {
 	private String material;
@@ -11,10 +13,10 @@ public class Escultura extends Pieza
 	private static final String ESCULTURA = "Escultura";
 	
 	public Escultura(List<String> autores, String fecha, String origen, String descripcion, double precio,
-			String fechaP, String titulo, double minPrecio, String material, String dimensiones, double peso,
+			String fechaP, String titulo, double minPrecio,Usuario propietario, String material, String dimensiones, double peso,
 			String instalacion) 
 	{
-		super(autores, fecha, origen, descripcion, precio, fechaP, titulo, minPrecio);
+		super(autores, fecha, origen, descripcion, precio, fechaP, titulo, minPrecio, propietario);
 		super.tipo = ESCULTURA;
 		this.material = material;
 		this.dimensiones = dimensiones;

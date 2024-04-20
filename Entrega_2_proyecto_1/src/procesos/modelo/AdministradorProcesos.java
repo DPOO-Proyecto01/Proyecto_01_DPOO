@@ -25,10 +25,17 @@ public class AdministradorProcesos
 		subastasEnProceso = new HashMap<Pieza,Subasta>();
 	}
 	
-	public void agregarSubasta(Subasta subasta) 
+	
+	public void agregarSubasta(Pieza pieza, String fecha, Empleado empleado, Administrador admin) 
 	{
-		Pieza pieza = subasta.getPieza();
-		subastasEnProceso.put(pieza, subasta);
+		if (pieza.isSubastable()) 
+		{
+			double precio = pieza.getPrecio();	
+			Subasta subasta;
+			subasta = new Subasta(pieza, precio, fecha, empleado, admin);
+			subastasEnProceso.put(pieza, subasta);
+		}
+		
 	}
 	
 	public void finalizarSubasta(Subasta subasta) 

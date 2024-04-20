@@ -1,6 +1,8 @@
 package inventario.modelo;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Inventario 
@@ -10,6 +12,7 @@ public class Inventario
 	private Map<String,Pieza> devolucion;
 	private Map<String,Pieza> enVenta;
 	private Map<String,Pieza> paraSubasta;
+	private List<String> ids = new ArrayList<String>();
 	
 	public Inventario() 
 	{
@@ -126,5 +129,18 @@ public class Inventario
 		{
 			mapa_2.put(id, piezaMover);
 		}
+	}
+	
+	public String generarId ()
+	{
+		Integer numAleatorio = (int) Math.random()*100000;
+		String cod = numAleatorio.toString();
+		while (ids.contains(cod))
+		{
+			numAleatorio = (int) Math.random()*100000;
+			cod = numAleatorio.toString();
+		}
+		ids.add(cod);
+		return cod;
 	}
 }

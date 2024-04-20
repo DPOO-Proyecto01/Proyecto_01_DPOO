@@ -1,6 +1,6 @@
 package inventario.modelo;
 
-import java.util.ArrayList;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -22,12 +22,12 @@ public abstract class Pieza
 	private double precioMinimo;
 	private String fechaDePrestamo;
 	private Map<String,Venta> historial;
-	private List<String> ids = new ArrayList<String>();
+	
 	
 	public Pieza(List<String> autores,String fecha,String origen,String descripcion,double precio,String fechaP,String titulo,
 			double minPrecio) 
 	{
-		id = generarId();
+		id = "";
 		this.autores = autores;
 		this.fecha = fecha;
 		this.origen = origen;
@@ -39,19 +39,6 @@ public abstract class Pieza
 		disponible = false;
 		precioMinimo = minPrecio;
 		historial = new HashMap<String, Venta>();
-	}
-	
-	public String generarId ()
-	{
-		Integer numAleatorio = (int) Math.random()*100000;
-		String cod = numAleatorio.toString();
-		while (ids.contains(cod))
-		{
-			numAleatorio = (int) Math.random()*100000;
-			cod = numAleatorio.toString();
-		}
-		
-		return cod;
 	}
 
 	public String getId() 

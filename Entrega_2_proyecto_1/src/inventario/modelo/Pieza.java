@@ -1,8 +1,11 @@
 package inventario.modelo;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+import procesos.modelo.Venta;
 import usuarios.modelo.Usuario;
 
 public abstract class Pieza 
@@ -19,11 +22,11 @@ public abstract class Pieza
 	private double precio;
 	private double precioMinimo;
 	private String fechaDePrestamo;
-	private Usuario propietario;
+	private Map<String,Venta> historial;
 	private List<String> ids = new ArrayList<String>();
 	
 	public Pieza(List<String> autores,String fecha,String origen,String descripcion,double precio,String fechaP,String titulo,
-			double minPrecio,Usuario propietario) 
+			double minPrecio) 
 	{
 		id = generarId();
 		this.autores = autores;
@@ -36,7 +39,7 @@ public abstract class Pieza
 		subastable = false;
 		disponible = false;
 		precioMinimo = minPrecio;
-		this.propietario = propietario;
+		historial = new HashMap<String, Venta>();
 	}
 	
 	public String generarId ()
@@ -112,10 +115,10 @@ public abstract class Pieza
 		return tipo;
 	}
 	
-	public Usuario getPropietario() 
-	
+
+	public Map<String, Venta> getHistorial() 
 	{
-		return propietario;
+		return historial;
 	}
 
 	public void cambiarDisponibilidad()

@@ -26,7 +26,7 @@ public class AdministradorProcesos
 	}
 	
 	
-	public void agregarSubasta(Pieza pieza, String fecha, Empleado empleado, Administrador admin) 
+	public void iniciarSubasta(Pieza pieza, String fecha, Empleado empleado, Administrador admin) 
 	{
 		if (pieza.isSubastable()) 
 		{
@@ -48,8 +48,6 @@ public class AdministradorProcesos
 		{
 			subastasEnProceso.remove(pieza);
 		}
-		
-		
 		
 	}
 	

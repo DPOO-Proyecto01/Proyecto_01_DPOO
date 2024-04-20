@@ -20,6 +20,28 @@ public class Galeria
 		this.adminUsuarios = adminUsuarios;
 	}
 	
+	
+	public Inventario getInventario() 
+	{
+		return inventario;
+	}
+
+
+
+	public AdministradorProcesos getAdminProcesos() 
+	{
+		return adminProcesos;
+	}
+
+
+
+	public AdministradorUsuarios getAdminUsuarios() 
+	{
+		return adminUsuarios;
+	}
+
+
+
 	public void cargarInventario (String archivo)
 	{
 		PersistenciaInventario cargador = CentralPersistencia.getPersistenciaInventario();

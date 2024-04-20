@@ -14,16 +14,4 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>uml/diag_persistencia.png</name>
-			<type>1</type>
-			<location>C:/Users/57313/Desktop/Uniandes/DPOO/diag_persistencia.png</location>
-		</link>
-		<link>
-			<name>uml/diagrama_proyecto1_2.png</name>
-			<type>1</type>
-			<location>C:/Users/57313/Desktop/Uniandes/DPOO/diagrama_proyecto1_2.png</location>
-		</link>
-	</linkedResources>
 </projectDescription>

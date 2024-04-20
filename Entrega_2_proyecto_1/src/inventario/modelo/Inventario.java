@@ -12,6 +12,7 @@ public class Inventario
 	private Map<String,Pieza> devolucion;
 	private Map<String,Pieza> enVenta;
 	private Map<String,Pieza> paraSubasta;
+	private Map<String,Pieza> piezasPasadas;
 	private List<String> ids = new ArrayList<String>();
 	
 	public Inventario() 
@@ -21,6 +22,7 @@ public class Inventario
 		devolucion = new HashMap<String,Pieza>();
 		enVenta = new HashMap<String,Pieza>();
 		paraSubasta = new HashMap<String,Pieza>();
+		piezasPasadas = new HashMap<String,Pieza>();
 	}
 	
 	public Map<String,Pieza> piezasEnExhibicion()
@@ -48,6 +50,12 @@ public class Inventario
 		return paraSubasta;
 	}
 	
+	
+	public Map<String, Pieza> getPiezasPasadas() 
+	{
+		return piezasPasadas;
+	}
+
 	public Pieza buscarPieza (String id)
 	{
 		boolean encontro = false;

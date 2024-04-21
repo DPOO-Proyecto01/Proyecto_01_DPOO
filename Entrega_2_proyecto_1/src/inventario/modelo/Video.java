@@ -1,6 +1,5 @@
 package inventario.modelo;
 
-import java.util.List;
 
 
 public class Video extends Pieza
@@ -10,7 +9,7 @@ public class Video extends Pieza
 	private String instalacion;
 	private static final String VIDEO = "Video";
 	
-	public Video(List<String> autores, String fecha, String origen, String descripcion, double precio, String fechaP,
+	public Video(String autores, String fecha, String origen, String descripcion, double precio, String fechaP,
 			String titulo, double minPrecio,double tamanio, double duracion, String instalacion) 
 	{
 		super(autores, fecha, origen, descripcion, precio, fechaP, titulo, minPrecio);

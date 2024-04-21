@@ -2,7 +2,6 @@ package inventario.modelo;
 
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import procesos.modelo.Venta;
@@ -11,11 +10,12 @@ public abstract class Pieza
 {
 	private String id;
 	protected String tipo;
-	private List<String> autores;
+	private String autores;
 	private String fecha;
 	private String origen;
 	private String descripcion;
 	private String titulo;
+	String status;
 	private boolean subastable;
 	private boolean disponible;
 	private double precio;
@@ -24,7 +24,7 @@ public abstract class Pieza
 	private Map<String,Venta> historial;
 	
 	
-	public Pieza(List<String> autores,String fecha,String origen,String descripcion,double precio,String fechaP,String titulo,
+	public Pieza(String autores,String fecha,String origen,String descripcion,double precio,String fechaP,String titulo,
 			double minPrecio) 
 	{
 		id = "";
@@ -45,8 +45,14 @@ public abstract class Pieza
 	{
 		return id;
 	}
+	
 
-	public List<String> getAutores() 
+	public void setId(String id) 
+	{
+		this.id = id;
+	}
+
+	public String getAutores() 
 	{
 		return autores;
 	}
@@ -75,10 +81,34 @@ public abstract class Pieza
 	{
 		return subastable;
 	}
+	
+
+	public void setSubastable(boolean subastable) 
+	{
+		this.subastable = subastable;
+	}
+
 
 	public boolean isDisponible() 
 	{
 		return disponible;
+	}
+	
+	public void setDisponible(boolean disponible) 
+	{
+		this.disponible = disponible;
+	}
+	
+	
+
+	public String getStatus() 
+	{
+		return status;
+	}
+
+	public void setStatus(String status) 
+	{
+		this.status = status;
 	}
 
 	public double getPrecio() 

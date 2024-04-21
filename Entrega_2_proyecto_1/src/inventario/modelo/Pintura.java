@@ -1,6 +1,5 @@
 package inventario.modelo;
 
-import java.util.List;
 
 
 public class Pintura extends Pieza
@@ -9,7 +8,7 @@ public class Pintura extends Pieza
 	private String dimensiones;
 	private static final String PINTURA = "Pintura";
 
-	public Pintura(List<String> autores, String fecha, String origen, String descripcion, double precio, String fechaP,
+	public Pintura(String autores, String fecha, String origen, String descripcion, double precio, String fechaP,
 			String titulo, double minPrecio,String tecnica, String dimensiones) 
 	{
 		super(autores, fecha, origen, descripcion, precio, fechaP, titulo, minPrecio);

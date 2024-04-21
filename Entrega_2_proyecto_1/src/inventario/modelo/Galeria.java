@@ -1,5 +1,7 @@
 package inventario.modelo;
 
+import java.io.IOException;
+
 import galeria.persistencia.CentralPersistencia;
 import galeria.persistencia.PersistenciaInventario;
 import galeria.persistencia.PersistenciaProcesos;
@@ -39,13 +41,23 @@ public class Galeria
 	{
 		return adminUsuarios;
 	}
+	
+	public boolean existeId (String id)
+	{
+		return inventario.getIds().contains(id);
+	}
+	
+	public void agregarPieza(Pieza pieza)
+	{
+		inventario.agregarPieza(pieza);
+	}
 
 
 
-	public void cargarInventario (String archivo)
+	public void cargarInventario (String archivo) throws IOException
 	{
 		PersistenciaInventario cargador = CentralPersistencia.getPersistenciaInventario();
-		cargador.cargarInventario(archivo);
+		cargador.cargarInventario(archivo,this);
 	}
 	
 	public void guardarInventario (String archivo)

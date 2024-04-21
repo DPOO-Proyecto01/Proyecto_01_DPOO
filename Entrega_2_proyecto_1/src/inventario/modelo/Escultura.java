@@ -1,6 +1,5 @@
 package inventario.modelo;
 
-import java.util.List;
 
 
 public class Escultura extends Pieza
@@ -11,7 +10,7 @@ public class Escultura extends Pieza
 	private String instalacion;
 	private static final String ESCULTURA = "Escultura";
 	
-	public Escultura(List<String> autores, String fecha, String origen, String descripcion, double precio,
+	public Escultura(String autores, String fecha, String origen, String descripcion, double precio,
 			String fechaP, String titulo, double minPrecio, String material, String dimensiones, double peso,
 			String instalacion) 
 	{

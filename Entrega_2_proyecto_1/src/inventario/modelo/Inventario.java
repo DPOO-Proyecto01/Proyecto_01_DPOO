@@ -56,6 +56,11 @@ public class Inventario
 		return piezasPasadas;
 	}
 
+	public List<String> getIds() 
+	{
+		return ids;
+	}
+
 	public Pieza buscarPieza (String id)
 	{
 		boolean encontro = false;
@@ -150,5 +155,38 @@ public class Inventario
 		}
 		ids.add(cod);
 		return cod;
+	}
+	
+	public void agregarPieza (Pieza pieza)
+	{
+		if (pieza.isDisponible())
+		{
+			enVenta.put(pieza.getId(), pieza);
+		}
+		
+		if (pieza.isSubastable())
+		{
+			paraSubasta.put(pieza.getId(), pieza);
+		}
+		if (pieza.getStatus().equals("Bodega"))
+		{
+			bodega.put(pieza.getId(), pieza);
+		}
+		else if (pieza.getStatus().equals("Exhibicion"))
+		{
+			exhibicion.put(pieza.getId(), pieza);
+		}
+		else if (pieza.getStatus().equals("Devolucion"))
+		{
+			devolucion.put(pieza.getId(), pieza);
+		}
+		
+		else if (pieza.getStatus().equals("Pasado"))
+		{
+			piezasPasadas.put(pieza.getId(), pieza);
+		}
+		
+		ids.add(pieza.getId());
+		
 	}
 }

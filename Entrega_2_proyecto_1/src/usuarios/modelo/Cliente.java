@@ -1,6 +1,43 @@
 package usuarios.modelo;
+import java.util.ArrayList;
+import inventario.modelo.Pieza;
 
 public class Cliente extends Usuario
 {
+	
+	private static String CLIENTE = "Cliente";
+	private static int TELEFONO;
+	private static String EMAIL;
+	private double monto;
+	private ArrayList<Pieza> piezasCompradas;
+	
+	Cliente(String _nombre, String _contrasenia, String _tipo, int telefono, String email, String id, Integer _Id) {
+		super(_nombre, _contrasenia, _tipo = "Cliente", _Id);
+		
+		Cliente.TELEFONO = telefono;
+		Cliente.EMAIL = email;
+		this.monto = 0;
+		this.piezasCompradas = new ArrayList<Pieza>();
+	}
+
+	public static String getCLIENTE() {
+		return CLIENTE;
+	}
+
+	public static int getTELEFONO() {
+		return TELEFONO;
+	}
+
+	public static String getEMAIL() {
+		return EMAIL;
+	}
+
+	public double getMonto() {
+		return monto;
+	}
+
+	public ArrayList<Pieza> getPiezasCompradas() {
+		return piezasCompradas;
+	}
 
 }

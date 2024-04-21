@@ -109,11 +109,11 @@ public class AdministradorUsuarios
 	public void eliminarUsuario(Usuario user) 
 	{
 		String tipo = user.getTipo();
-		if (tipo == "Cliente") {
+		if (tipo.equals("Cliente")) {
 			clientes.remove(user.getID());
-		} else if (tipo == "Cajero") {
+		} else if (tipo.equals("Cajero")) {
 			cajeros.remove(user.getID());
-		} else if (tipo == "Operador") {
+		} else if (tipo.equals("Operadores")) {
 			operadores.remove(user.getID());
 		} else {
 			administradores.remove(user.getID());
@@ -124,13 +124,13 @@ public class AdministradorUsuarios
 	public boolean logIn(String username, String password, String tipo) {
 		HashMap<Integer, ? extends Usuario> mapa;
 		
-		if (tipo=="Cliente") 
+		if (tipo.equals("Clientes")) 
 		{
 			mapa = clientes;
-		} else if (tipo == "Cajero")
+		} else if (tipo.equals("Cajero"))
 		{
 			mapa = cajeros;
-		} else if (tipo == "Operador")
+		} else if (tipo.equals("Operador"))
 		{
 			mapa = operadores;
 		} else 
@@ -139,9 +139,9 @@ public class AdministradorUsuarios
 		}
 		
 		for (Map.Entry<Integer, ? extends Usuario> entry : mapa.entrySet()) {
-			if (username == entry.getValue().getNombre())
+			if (username.equals(entry.getValue().getNombre()))
 			{
-				if (password == entry.getValue().getContrasenia()) 
+				if (password.equals(entry.getValue().getContrasenia())) 
 				{
 					return true;
 				}

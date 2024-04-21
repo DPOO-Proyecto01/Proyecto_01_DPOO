@@ -6,8 +6,7 @@ public class Administrador extends Usuario
 	
 	
 	Administrador(String _nombre, String _contrasenia, String _tipo, Integer _Id) {
-		super(_nombre, _contrasenia, _tipo = "Administrador", _Id);
-		// TODO Auto-generated constructor stub
+		super(_nombre, _contrasenia, _tipo = ADMIN, _Id);
 		
 	}
 

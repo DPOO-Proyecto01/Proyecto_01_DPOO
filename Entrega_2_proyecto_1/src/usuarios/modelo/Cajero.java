@@ -1,5 +1,4 @@
 package usuarios.modelo;
-import usuarios.modelo.Usuario;
 
 public class Cajero extends Empleado
 {

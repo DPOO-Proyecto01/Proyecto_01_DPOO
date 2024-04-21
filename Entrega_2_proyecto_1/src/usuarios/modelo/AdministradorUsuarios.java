@@ -6,18 +6,22 @@ import java.util.ArrayList;
 
 public class AdministradorUsuarios 
 {	
-	private HashMap<Integer, Administrador> administradores = new HashMap<>();
-	private HashMap<Integer, Cajero> cajeros = new HashMap<>();
-	private HashMap<Integer, Operador> operadores = new HashMap<>();
-	private HashMap<Integer, Cliente> clientes = new HashMap<>();
-	private ArrayList<Integer> listaIDs;
+	private HashMap<Integer, Administrador> administradores;
+	private HashMap<Integer, Cajero> cajeros;
+	private HashMap<Integer, Operador> operadores;
+	private HashMap<Integer, Cliente> clientes;
+	private ArrayList<Integer> listaIDs = new ArrayList<Integer>();
 	private Integer ultimoID = listaIDs.get(listaIDs.size()-1);
 	//En el ArrayList listaIDs a algunos integrantes les sale la opcion .getLast()
 	//pero a otros no, se dejara como .get(listaIds.size()-1) para que sirva en todas 
 	//las maquinas
 	
-	public AdministradorUsuarios() {
-		
+	public AdministradorUsuarios() 
+	{
+		administradores = new HashMap<Integer,Administrador>();
+		cajeros = new HashMap<Integer,Cajero>();
+		operadores = new HashMap<Integer,Operador>();
+		clientes = new HashMap<Integer,Cliente>();
 	}
 	
 	public Usuario buscarAdmin(String nombre) 

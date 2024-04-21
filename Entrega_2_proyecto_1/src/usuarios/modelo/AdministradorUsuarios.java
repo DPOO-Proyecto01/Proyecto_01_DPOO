@@ -2,6 +2,7 @@ package usuarios.modelo;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.ArrayList;
 
 public class AdministradorUsuarios 
 {	
@@ -9,7 +10,8 @@ public class AdministradorUsuarios
 	private HashMap<Integer, Cajero> cajeros = new HashMap<>();
 	private HashMap<Integer, Operador> operadores = new HashMap<>();
 	private HashMap<Integer, Cliente> clientes = new HashMap<>();
-	private Integer ultimoID = 0;
+	private ArrayList<Integer> listaIDs;
+	private Integer ultimoID = listaIDs.getLast();
 	
 	public AdministradorUsuarios() {
 		
@@ -24,7 +26,7 @@ public class AdministradorUsuarios
 			
 			String nombreAdmin = entry.getValue().getNombre();
 			
-			if (nombreAdmin == nombre) 
+			if (nombreAdmin.equals(nombre)) 
 			{
 				return entry.getValue();
 			} 
@@ -42,7 +44,7 @@ public class AdministradorUsuarios
 			
 			String nombreCajero = entry.getValue().getNombre();
 			
-			if (nombreCajero == nombre)
+			if (nombreCajero.equals(nombre))
 			{
 				return entry.getValue();
 			}
@@ -59,7 +61,7 @@ public class AdministradorUsuarios
 			
 			String nombreOperador = entry.getValue().getNombre();
 			
-			if (nombreOperador == nombre)
+			if (nombreOperador.equals(nombre))
 			{
 				return entry.getValue();
 			}
@@ -76,7 +78,7 @@ public class AdministradorUsuarios
 			
 			String nombreCliente = entry.getValue().getNombre();
 			
-			if (nombreCliente == nombre)
+			if (nombreCliente .equals(nombre))
 			{
 				return entry.getValue();
 			}
@@ -149,7 +151,7 @@ public class AdministradorUsuarios
 	}
 	
 	public Integer crearID() {
-	 ultimoID = ultimoID + 1;
+	 listaIDs.add(ultimoID+1);
 	 return ultimoID;
  }
 	

@@ -2,6 +2,7 @@ package galeria.persistencia;
 
 public class CentralPersistencia 
 {
+	//Los métodos inician y retornan las clases que serán usadas para la persistencia
 	public static PersistenciaInventario getPersistenciaInventario()
 	{
 		return new PersistenciaInventario();

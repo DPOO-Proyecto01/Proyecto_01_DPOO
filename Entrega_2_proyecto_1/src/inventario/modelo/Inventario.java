@@ -13,6 +13,9 @@ public class Inventario
 	private Map<String,Pieza> enVenta;
 	private Map<String,Pieza> paraSubasta;
 	private Map<String,Pieza> piezasPasadas;
+	/**Se tiene una lista de ids para crear ids completamente nuevos
+	 * También se usa para tener un trazado de qué piezas se han cargado con el fin
+	 * de que no se cargue una pieza dos veces**/
 	private List<String> ids = new ArrayList<String>();
 	
 	public Inventario() 
@@ -63,6 +66,7 @@ public class Inventario
 
 	public Pieza buscarPieza (String id)
 	{
+		//Busca una pieza en todas las listas de piezas que aun le pertencen a la galeria
 		boolean encontro = false;
 		Pieza pieza = null;
 		
@@ -103,6 +107,8 @@ public class Inventario
 	{
 		String idPieza = obra.getId();
 		
+		//Se retira una pieza de todas las listas que la contengan
+		
 		if (exhibicion.containsKey(idPieza))
 		{
 			exhibicion.remove(idPieza);
@@ -131,6 +137,7 @@ public class Inventario
 	
 	public void moverPieza(String id, Map<String,Pieza> mapa_1, Map<String,Pieza> mapa_2)
 	{
+		//Se mueve una pieza de una lista a otra
 		Pieza piezaMover = null;
 		if(mapa_1.containsKey(id))
 		{
@@ -146,19 +153,23 @@ public class Inventario
 	
 	public String generarId ()
 	{
+		//Se genera un id aleatriamente
 		Integer numAleatorio = (int) Math.random()*100000;
 		String cod = numAleatorio.toString();
+		//Se vuelve a generar el id si el que se generó ya existía
 		while (ids.contains(cod))
 		{
 			numAleatorio = (int) Math.random()*100000;
 			cod = numAleatorio.toString();
 		}
+		//Una vez obtenido un codigo nuevo se añade a la lista de ids
 		ids.add(cod);
 		return cod;
 	}
 	
 	public void agregarPieza (Pieza pieza)
 	{
+		//Se agrega una pieza a una lista dependiendo de sus atributos(subastable,disponible,status)
 		if (pieza.isDisponible())
 		{
 			enVenta.put(pieza.getId(), pieza);

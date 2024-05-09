@@ -11,8 +11,8 @@ public class Cliente extends Usuario
 	private double monto;
 	private ArrayList<Pieza> piezasCompradas;
 	
-	Cliente(String _nombre, String _contrasenia, String _tipo, int telefono, String email, String id, Integer _Id) {
-		super(_nombre, _contrasenia, _tipo = "Cliente", _Id);
+	public Cliente(String _nombre, String _contrasenia, String _tipo, int telefono, String email, Integer _Id) {
+		super(_nombre, _contrasenia, _tipo = "Cliente", _Id = AdministradorUsuarios.crearID());
 		
 		Cliente.TELEFONO = telefono;
 		Cliente.EMAIL = email;

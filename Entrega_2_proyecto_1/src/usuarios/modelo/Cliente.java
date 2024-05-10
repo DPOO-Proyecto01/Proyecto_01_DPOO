@@ -39,5 +39,15 @@ public class Cliente extends Usuario
 	public ArrayList<Pieza> getPiezasCompradas() {
 		return piezasCompradas;
 	}
+	
+	public void setMonto(double monto)
+	{
+		this.monto = monto;
+	}
+	
+	public void añadirPiezaComprada(Pieza pieza)
+	{
+		this.piezasCompradas.add(pieza);
+	}
 
 }

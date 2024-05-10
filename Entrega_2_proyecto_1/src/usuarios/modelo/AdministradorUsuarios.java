@@ -24,6 +24,41 @@ public class AdministradorUsuarios
 		clientes = new HashMap<Integer,Cliente>();
 	}
 	
+	/**
+	 * @return the administradores
+	 */
+	public HashMap<Integer, Administrador> getAdministradores() {
+		return administradores;
+	}
+
+	/**
+	 * @return the cajeros
+	 */
+	public HashMap<Integer, Cajero> getCajeros() {
+		return cajeros;
+	}
+
+	/**
+	 * @return the operadores
+	 */
+	public HashMap<Integer, Operador> getOperadores() {
+		return operadores;
+	}
+
+	/**
+	 * @return the clientes
+	 */
+	public HashMap<Integer, Cliente> getClientes() {
+		return clientes;
+	}
+
+	/**
+	 * @return the listaIDs
+	 */
+	public ArrayList<Integer> getListaIDs() {
+		return listaIDs;
+	}
+
 	public Usuario buscarAdmin(String nombre) 
 	{
 		//En esta funcion vamos a buscar un Administrador de acuerdo a su nombre

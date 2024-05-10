@@ -30,6 +30,54 @@ public class Venta
 		this.medioDePago = medioDePago;	
 		this.comprador = comprador;
 	}
+
+
+	/**
+	 * @return the pieza
+	 */
+	public Pieza getPieza() {
+		return pieza;
+	}
+
+
+	/**
+	 * @return the precio
+	 */
+	public double getPrecio() {
+		return precio;
+	}
+
+
+	/**
+	 * @return the empleado
+	 */
+	public Empleado getEmpleado() {
+		return empleado;
+	}
+
+
+	/**
+	 * @return the admin
+	 */
+	public Administrador getAdmin() {
+		return admin;
+	}
+
+
+	/**
+	 * @return the medioDePago
+	 */
+	public String getMedioDePago() {
+		return medioDePago;
+	}
+
+
+	/**
+	 * @return the comprador
+	 */
+	public Cliente getComprador() {
+		return comprador;
+	}
 	
 	
 	

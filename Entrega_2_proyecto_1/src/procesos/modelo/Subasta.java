@@ -2,6 +2,7 @@ package procesos.modelo;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 import inventario.modelo.Pieza;
 import usuarios.modelo.Administrador;
@@ -36,6 +37,34 @@ public class Subasta
 	}
 	
 	/**
+	 * @return the precioFinal
+	 */
+	public double getPrecioFinal() {
+		return precioFinal;
+	}
+
+	/**
+	 * @return the ofertas
+	 */
+	public List<String> getOfertas() {
+		return ofertas;
+	}
+
+	/**
+	 * @return the empleado
+	 */
+	public Empleado getEmpleado() {
+		return empleado;
+	}
+
+	/**
+	 * @return the admin
+	 */
+	public Administrador getAdmin() {
+		return admin;
+	}
+
+	/**
 	 * @return the fecha
 	 */
 	public String getFecha() {
@@ -66,5 +95,9 @@ public class Subasta
 		terminada = true;
 	}
 	
+	public void añadirOferta(String oferta)
+	{
+		this.ofertas.add(oferta);
+	}
 	
 }

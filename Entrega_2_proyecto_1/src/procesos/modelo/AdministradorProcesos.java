@@ -26,6 +26,30 @@ public class AdministradorProcesos
 	}
 	
 	
+	/**
+	 * @return the ventas
+	 */
+	public List<Venta> getVentas() {
+		return ventas;
+	}
+
+
+	/**
+	 * @return the subastasEnProceso
+	 */
+	public Map<Pieza, Subasta> getSubastasEnProceso() {
+		return subastasEnProceso;
+	}
+
+
+	/**
+	 * @return the subastasFinalizadas
+	 */
+	public List<Subasta> getSubastasFinalizadas() {
+		return subastasFinalizadas;
+	}
+
+
 	public void iniciarSubasta(Pieza pieza, String fecha, Empleado empleado, Administrador admin) 
 	{
 		if (pieza.isSubastable()) 
@@ -55,7 +79,25 @@ public class AdministradorProcesos
 	{
 		double precio = pieza.getPrecio();
 		Venta venta = new Venta(pieza, precio, empleado, admin, medioDePago, cliente);
-		ventas.add(venta);
+		this.ventas.add(venta);
+	}
+	
+	public void añadirVenta(Venta venta) 
+	{
+		this.ventas.add(venta);
+	}
+	
+	public void añadirSubasta(Subasta subasta) 
+	{
+		if (subasta.isTerminada()) 
+		{
+			this.subastasFinalizadas.add(subasta);
+		}
+		else 
+		{
+			Pieza pieza = subasta.getPieza();
+			this.subastasEnProceso.put(pieza, subasta);
+		}
 	}
 	
 	
